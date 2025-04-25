@@ -29,4 +29,3 @@ cd logit
 go build -o logit
 mv logit /usr/local/bin/   # optional
 ```
-
