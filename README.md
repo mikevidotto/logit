@@ -7,7 +7,7 @@ logit is a simple command-line tool for daily developer logging. It creates a ma
 ```
 logit             # Creates or opens today's log
 logit -p NAME     # Sets the current project
-logit -t "tasks"  # Sets or updates today's tasks
+logit -t          # Sets or updates today's tasks
 logit -l          # Lists all existing logs
 ```
 
@@ -15,7 +15,7 @@ logit -l          # Lists all existing logs
 
 ```
 logit -p my-project
-logit -t "Implement feature X"
+logit -t
 logit
 ```
 
