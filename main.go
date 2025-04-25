@@ -14,6 +14,7 @@ import (
 )
 
 const (
+    configpath="C:/Users/jenna/GolandProjects/logit/config.json"
     logdirectory="C:/Users/jenna/GolandProjects/logs/"
 )
 
@@ -119,13 +120,12 @@ func SetTasks(numtasks int) ([]Task, error) {
 	var tasks []Task
 	var task Task
 	for i := range numtasks {
-		fmt.Print("Task", i+1, ":")
-		fmt.Scan(&task.Name)
+		fmt.Print("Task ", i+1, ":")
 		line, err := in.ReadString('\n')
 		if err != nil {
 			return nil, err
 		}
-		task.Name = line[:len(line)-2]
+        task.Name = line[:len(line)-2]
 		tasks = append(tasks, task)
 	}
 	return tasks, nil
@@ -161,5 +161,5 @@ func UpdateConfig(config Config) {
 	if err != nil {
 		fmt.Println("error marshalling data structure into json: ", err)
 	}
-	os.WriteFile("./config.json", updated, 0666)
+	os.WriteFile(configpath, updated, 0666)
 }
