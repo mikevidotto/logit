@@ -6,6 +6,9 @@ logit is a command-line daily logging tool.
 
 2. Then it will open the markdown file template in neovim to be modified by the user (me).
 
-How will we handle the user's current project? Maybe it should be pre-populated if it exists. Maybe there's a
-command that changes the current project... and if there is no current project, it should ask the user what
-it's currently working on and set that up.
+3. FLAGS:
+    - [x] -p flag will allow user to set their current project value in the config.
+    - [ ] -h flag will show usage and flags.
+    - [ ] -l flag will list all of the previous logs, sorted by date created.
+    - [ ] -t flag will show you the two tasks that you've set for today.
+
