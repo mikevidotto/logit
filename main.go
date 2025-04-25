@@ -13,6 +13,10 @@ import (
 	"time"
 )
 
+const (
+    logdirectory="C:/Users/jenna/GolandProjects/logs/"
+)
+
 type Config struct {
 	Date           string `json:"date"`
 	CurrentProject string `json:"currentproject"`
@@ -49,17 +53,16 @@ func main() {
 	}
 
 	if len(os.Args) < 2 {
-		path := "C:/Users/jenna/GolandProjects/logit/logs/" + time.Now().Local().String()[:10] + ".md"
+		path := logdirectory + time.Now().Local().String()[:10] + ".md"
 		CreateLog(path, config)
 		OpenLog(path)
 	}
 }
 
 func ShowLogs() {
-    logspath := "C:/Users/jenna/GolandProjects/logit/logs/"
-    direntry, err := os.ReadDir(logspath)
+    direntry, err := os.ReadDir(logdirectory)
     if err != nil {
-        log.Fatal("error reading directory:", logspath, ":", err)
+        log.Fatal("error reading directory:", logdirectory, ":", err)
     }
     for i, entry := range direntry {
         fmt.Println(i+1, entry.Name())
