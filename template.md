@@ -1,15 +1,15 @@
-# Daily Log — {{DATE}}
+# Daily Log — {{.Date}}
 
-## 🔄 Currently Working On
-{{CURRENT_PROJECT}}
+## Currently Working On
+{{.CurrentProject}}
 
-## 🎯 Intent for Today
+## Intent for Today
 What’s the one thing I want to move forward today?
 
-## ✅ Tasks
+## Tasks
 - [ ] First priority
 - [ ] Second one if time allows
 
-## 🧠 Learning & Thoughts
+## Learning & Thoughts
 - What did I learn today?
 - Notes, ideas, or distractions
