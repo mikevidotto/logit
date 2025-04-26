@@ -101,9 +101,9 @@ func GetTemplate() []byte {
 func CreateLog(path string, config Config) {
 	todaysdate := time.Now().Local().String()[:10]
 
-	_, err := os.Stat("logs")
+	_, err := os.Stat(logdirectory)
 	if errors.Is(err, os.ErrNotExist) {
-		os.Mkdir("logs", 0666)
+		os.Mkdir(logdirectory, 0666)
 	}
 
 	_, err = os.Stat(path)
