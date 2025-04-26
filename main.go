@@ -125,7 +125,11 @@ func SetTasks(numtasks int) ([]Task, error) {
 		if err != nil {
 			return nil, err
 		}
-        task.Name = line[:len(line)-2]
+        if len(line) > 2 {
+            task.Name = line[:len(line)-2]
+        }else {
+            task.Name = line + "ERROR"
+        }
 		tasks = append(tasks, task)
 	}
 	return tasks, nil
